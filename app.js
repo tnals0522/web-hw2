@@ -60,17 +60,13 @@ console.log(`A5 관객 100만 이상: ${resultA5}`);
 
 // ===== Part B =====
 
-// average(list) : list(배열) ⇒ 평균 평점(숫자)
+// average(list) : 배열 ⇒ 평균 평점(숫자. 10주차 함수와같음)
 function average(list) {
-    let sum = 0;
-    for (let i = 0; i < list.length; i++) {
-        sum += list[i].rating;
-    }
-    return list.length > 0 ? sum / list.length : 0;
+    return averageBy(list, "rating");
 }
 
 // best(list) :배열 ⇒ 최고 평점 객체
-function best(list) {
+const best = (list) => {
     if (list.length === 0) return null;
     let maxObj = list[0];
     for (let i = 1; i < list.length; i++) {
@@ -82,12 +78,12 @@ function best(list) {
 }
 
 // filterByRating(list, min) : 배열, 숫자 ⇒ 새 배열
-function filterByRating(list, min) {
+const filterByRating = (list, min) => {
     return list.filter(m => m.rating >= min);
 }
 
 // sortBy(list, key, desc) : 배열, 키 이름, 참이면 내림차순 ⇒ 새 배열
-function sortBy(list, key, desc) {
+const sortBy = (list, key, desc) => {
     const sign = desc ? -1 : 1;
     return [...list].sort((a, b) => {
         let result = 0;
@@ -101,18 +97,18 @@ function sortBy(list, key, desc) {
 }
 
 // search(list, keyword) : 배열, 문자열 ⇒ 새 배열
-function search(list, keyword) {
+const search = (list, keyword) => {
     const term = keyword.trim().toLowerCase();
     return list.filter(m => m.title.toLowerCase().includes(term));
 }
 
 // formatNumber(n) : 숫자나 숫자 문자열 ⇒ "1,234,567"
-function formatNumber(n) {
+const formatNumber = (n) => {
     return Number(n).toLocaleString("ko-KR");
 }
 
 // yearsSince(dateStr) : "2014-11-06" ⇒ 올해까지 몇 년(숫자)
-function yearsSince(dateStr) {
+const yearsSince = (dateStr) => {
     const year = parseInt(dateStr.substring(0, 4), 10);
     const currentYear = new Date().getFullYear();
     return currentYear - year;
@@ -129,3 +125,20 @@ const outElement = document.getElementById("out");
 if (outElement) {
     outElement.textContent = `${line1}\n${line2}\n${line3}`;
 }
+
+// ===== Part C =====
+
+function getList(data) {
+    return data.results;
+}
+
+function averageBy(list, key) {
+    if (!list || list.length === 0) return 0;
+    const sum = list.reduce((acc, item) => acc + (item[key] || 0), 0);
+    return sum / list.length;
+}
+
+console.log(`C1: ${TMDB.page}, ${TMDB.total_pages}, ${TMDB.total_results},이번 응답의 영화 수: ${getList(TMDB).length}편`);
+console.log(`C2: 상영작 평균 평점: ${averageBy(getList(TMDB), "vote_average").toFixed(1)}`);
+console.log(`C4 '바다' 검색: ${search(getList(TMDB), "바다").length}편`);
+console.table(sortBy(getList(TMDB), "vote_average", true).slice(0, 5), ["title", "release_date", "vote_average"]);
