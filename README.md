@@ -1,16 +1,42 @@
-1 | formatNumber("1234567") | '1,234,567'(콘솔은 문자열에 작은따옴표를 붙여 보여 줌)
-결과:'1,234,567'
-2 | average(movies).toFixed(1) | 손으로 계산한 평균의 소수 1자리(예 '7.0')
-결과:'7.6'
-3 | best(movies).title | A2와 같은 제목
-결과:'옵세션'
-4 | sortBy(movies, "rating", true)[0].title | 3번과 같은 제목(최고 평점이 두 편 이상이면 그중하나)
-결과:'옵세션'
-5 | filterByRating(movies, 8).length | A3와 같은 개수
-결과:3
-6 | search(movies, " 인터 ").length | 제목에 "인터"가 든 영화 수(없으면 내 제목 일부를 앞뒤 공백과 함께 넣어시험)
-결과:1
-7 | yearsSince("2014-11-06") | 올해 연도에서 2014를 뺀 값(2026년이면 12)
-결과:12
-8 | 4번 실행 뒤 movies[0].title | data.js의 첫 영화 제목 그대로
-결과:'극장판 치이카와: 인어 섬의 비밀'
+# 실습과제 #2 : 영화 데이터를 자바스크립트로 
+- 이름 / 학번 :김수민 / 2651011 
+- 사이트 주소 : https://tnals0522.github.io/web-hw2/ 
+- 사용한 API 1 : TMDB (
+https://image.tmdb.org/t/p/w342/5TMyytCI5Pfc9c1eNsljiCdiB05.jpg 극장판 치이카와: 인어 섬의 비밀 / 2026-07-24 / 7.4
+https://image.tmdb.org/t/p/w342/5NJmR3IA7Rk3inlA4AeQy5ZC5cA.jpg 오늘 밤, 세계에서 이 사랑이 사라진다 해도 / 2022-07-29 / 7.6
+ https://image.tmdb.org/t/p/w342/df4rpubfWy0g7HCzBNtPLLKnoMH.jpg 옵세션 / 2026-05-13 / 8.1,
+ https://image.tmdb.org/t/p/w342/9XkAF2pl2uliiuAORaWTgPmr6zG.jpg 범죄도시 2 / 2022-05-18 / 7.3
+ https://image.tmdb.org/t/p/w342/8ze9OcVuFiy94s6FFPvsn4oC2e1.jpg 오디세이 / 2026-07-15 / 8.0
+ https://image.tmdb.org/t/p/w342/c55ijsOdntj6P25vDwHLdgsBpmV.jpg 암살자(들) / 2026-09-30 / 7.4
+ https://image.tmdb.org/t/p/w342/wkm9BQLok7U2KihcCspCa663Qse.jpg 실낙원 / 2026-09-23 / 7.2
+ https://image.tmdb.org/t/p/w342/ueigb5zra1tj6FTK9yhh2P33P9B.jpg 타짜: 벨제붑의 노래 / 2026-10-21 / 8.0
+ https://image.tmdb.org/t/p/w342/LSGpoSAlitss0KOvVakkeUToZo.jpg 클레이페이스) / 2026-09-23 / 7.4
+사용한 API 2 : KOBIS 일별 박스오피스 (기준일 2026-10-25)
+## 구현 항목 체크 - [ ] (요구사항 1~6의 번호와 제목을 그대로 옮겨 적고 체크, 보너스는 이름과 캡처 파일명) 
+1. Part A √
+2. Part B 함수 7개 √
+3. Part C 응답 구조 √
+4. 출력√
+5. 코드 품질 √
+6. 제출 형식 √
+## 자가 테스트 표 (2~8번도 Step 4의 표대로 이어 적기) 
+| 번호 | 호출 | 기대 결과 | 실제 결과 | 
+| 1 | formatNumber("1234567") | '1,234,567'(콘솔은 문자열에 작은따옴표를 붙여 보여 줌) | 결과:'1,234,567'
+| 2 | average(movies).toFixed(1) | 손으로 계산한 평균의 소수 1자리(예 '7.0') | 결과:'7.6'
+| 3 | best(movies).title | A2와 같은 제목 | 결과:'옵세션'
+| 4 | sortBy(movies, "rating", true)[0].title | 3번과 같은 제목(최고 평점이 두 편 이상이면 그중하나)| 결과:'옵세션'
+| 5 | filterByRating(movies, 8).length | A3와 같은 개수 | 결과:3
+| 6 | search(movies, " 인터 ").length | 제목에 "인터"가 든 영화 수(없으면 내 제목 일부를 앞뒤 공백과 함께 넣어시험) | 결과:1
+| 7 | yearsSince("2014-11-06") | 올해 연도에서 2014를 뺀 값(2026년이면 12) | 결과:12
+| 8 | 4번 실행 뒤 movies[0].title | data.js의 첫 영화 제목 그대로 | 결과:'극장판 치이카와: 인어 섬의 비밀'
+|---|---|---|---|
+| 1 | formatNumber("1234567") | '1,234,567' | | 
+## 어려웠던 점 3가지와 해결 
+1.average에 averageBy을 사용하기 중 오류가 뜸 / 해결: const에서 function으로 바꿔서 해결
+2.년도별 영화가 몇개인지 나오는 함수를 어떻게 코딩해야 할지 모르겠다. / 해결: 친구와 의논하여 해결
+3.sortBy을 어떻게 코딩해야 될지 모르겠다. / 해결 : 수업 시간때 배운 것을 참고하여 해졀
+## 참고한 자료 (교재 절, MDN 페이지 제목, 검색어) 
+1.11월 11일 수업 내용 참고 
+2.구글 자바스크립트 함수를 검색하여 참고
+## 생성형 AI 사용 내역 (없으면 "없음") - 질문 요지 : - 답변 요약 : - 채택 여부 
+average& averageBy 오류 뜻 질문 - average에 averageBy이 연결이 안됬다. - 오류의 뜻을 채택하여 문제점 해결 
