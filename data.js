@@ -70,7 +70,7 @@ const movies = [
     },
 
     {
-        title: "타짜: 벨제붑의 노래", year: 2026, date: "2026-09-23", rating: 7.4,
+        title: "타짜: 벨제붑의 노래", year: 2026, date: "2026-09-23", rating: 7.0,
         audience: 1999477, poster: "https://image.tmdb.org/t/p/w342/ueigb5zra1tj6FTK9yhh2P33P9B.jpg", type: "boxoffice", rank: 4
     },
 

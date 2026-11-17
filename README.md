@@ -2,15 +2,15 @@
 - 이름 / 학번 :김수민 / 2651011 
 - 사이트 주소 : https://tnals0522.github.io/web-hw2/ 
 - 사용한 API 1 : TMDB (
-https://image.tmdb.org/t/p/w342/5TMyytCI5Pfc9c1eNsljiCdiB05.jpg 극장판 치이카와: 인어 섬의 비밀 / 2026-07-24 / 7.4
-https://image.tmdb.org/t/p/w342/5NJmR3IA7Rk3inlA4AeQy5ZC5cA.jpg 오늘 밤, 세계에서 이 사랑이 사라진다 해도 / 2022-07-29 / 7.6
- https://image.tmdb.org/t/p/w342/df4rpubfWy0g7HCzBNtPLLKnoMH.jpg 옵세션 / 2026-05-13 / 8.1,
- https://image.tmdb.org/t/p/w342/9XkAF2pl2uliiuAORaWTgPmr6zG.jpg 범죄도시 2 / 2022-05-18 / 7.3
- https://image.tmdb.org/t/p/w342/8ze9OcVuFiy94s6FFPvsn4oC2e1.jpg 오디세이 / 2026-07-15 / 8.0
- https://image.tmdb.org/t/p/w342/c55ijsOdntj6P25vDwHLdgsBpmV.jpg 암살자(들) / 2026-09-30 / 7.4
- https://image.tmdb.org/t/p/w342/wkm9BQLok7U2KihcCspCa663Qse.jpg 실낙원 / 2026-09-23 / 7.2
- https://image.tmdb.org/t/p/w342/ueigb5zra1tj6FTK9yhh2P33P9B.jpg 타짜: 벨제붑의 노래 / 2026-10-21 / 8.0
- https://image.tmdb.org/t/p/w342/LSGpoSAlitss0KOvVakkeUToZo.jpg 클레이페이스) / 2026-09-23 / 7.4
+극장판 치이카와: 인어 섬의 비밀 / 2026-07-24 / 7.4
+오늘 밤, 세계에서 이 사랑이 사라진다 해도 / 2022-07-29 / 7.6
+옵세션 / 2026-05-13 / 8.1,
+범죄도시 2 / 2022-05-18 / 7.3
+오디세이 / 2026-07-15 / 8.0
+암살자(들) / 2026-09-30 / 7.4
+실낙원 / 2026-09-23 / 7.2
+타짜: 벨제붑의 노래 / 2026-10-21 / 8.0
+클레이페이스 / 2026-09-23 / 7.4)
 사용한 API 2 : KOBIS 일별 박스오피스 (기준일 2026-10-25)
 ## 구현 항목 체크 - [ ] (요구사항 1~6의 번호와 제목을 그대로 옮겨 적고 체크, 보너스는 이름과 캡처 파일명) 
 1. Part A √
